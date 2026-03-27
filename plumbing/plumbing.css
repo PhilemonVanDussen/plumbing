@@ -32,12 +32,12 @@ body {
 
 /* Navigation */
 /* maybe use flexbox? */
-.main-nav ul {
+/* .main-nav ul {
 	display: grid;
 	gap: 20px;
 	padding: 0;
 	list-style: none;
-	/*grid-template-columns: repeat(4, 1fr);*/
+	grid-template-columns: repeat(4, 1fr);
 	grid-template-columns: repeat(auto-fit, minmax(200px, auto));
 }
 
@@ -56,7 +56,24 @@ body {
 .main-nav a:hover{
 	background: var(--orange);
 	color: var(--light);
+} */
+
+.main-nav {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 10px;
+	justify-content: flex-end;
 }
+
+
+
+
+
+
+
+
 
 .top-container {
     background-image: url(images/wrench-metal-pipe.jpg);
