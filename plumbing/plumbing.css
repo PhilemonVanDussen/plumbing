@@ -107,7 +107,7 @@ body {
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.box{
+.box {
 	background: var(--primary);
 	text-align: center;
 	padding: 1.5rem 2rem;
