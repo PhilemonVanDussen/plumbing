@@ -89,19 +89,48 @@ h1 {
 	background-color: var(--very-light-grey);
 }
 
+/* Image Carousel */
 .top-container {
-    background-image: url(images/wrench-metal-pipe.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    justify-items: center;
-	min-height: 300px;
-	display: grid;
-	grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 	width: 75%;
 	margin: auto;
-	box-shadow: var(--shadow);
 }
+
+.top-container img {
+	width: 100%;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top:50%;
+	width:auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight:bold;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4;}
+	to {opacity: 1;}
+}
+/* End of Image Carousel */
 
 .content {
 	width: 75%;
@@ -111,6 +140,10 @@ h1 {
 	box-shadow: var(--shadow);
 }
 
+.content li {
+	margin-left: 25px;
+
+}
 /* Boxes */
 .boxes {
 	display: grid;
