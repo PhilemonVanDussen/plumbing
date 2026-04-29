@@ -94,6 +94,7 @@ h1 {
 	width: 75%;
 	margin: auto;
 	
+	
 }
 
 .top-container img {
@@ -133,8 +134,10 @@ h1 {
 	width: 75%;
 	background-color: var(--very-light-grey);
 	padding: 1rem;
-	margin: auto;
 	box-shadow: var(--shadow);
+    margin: auto;
+	
+	
 }
 
 .content li {
