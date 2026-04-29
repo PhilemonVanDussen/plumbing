@@ -87,12 +87,15 @@ body {
 h1 {
 	text-align: center;
 	background-color: var(--very-light-grey);
+	/* Added margin to eliminate gap between top-container and content DIVs */
+	margin-bottom: 0;
 }
 
 /* Image Carousel */
 .top-container {
 	width: 75%;
-	margin: auto;
+	margin: 0 auto;
+	line-height: 0; /* Collapses white space within the top-container */
 	
 	
 }
@@ -135,7 +138,8 @@ h1 {
 	background-color: var(--very-light-grey);
 	padding: 1rem;
 	box-shadow: var(--shadow);
-    margin: auto;
+    /* margin: auto; */
+	margin: 0 auto; /* Explicitly set top margin to zero */
 	
 	
 }
