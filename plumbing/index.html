@@ -3,40 +3,204 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
-	<link rel = "stylesheet" href = "plumbing.css">
+	<title>Home | Long Lake Plumbing</title>
+	<style>
+		/* Global Reset and Variables */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		:root {
+			--orange: #EF7D12;
+			--steelblue: rgb(36, 83, 145);
+			--dark: #333;
+			--light: #fff;
+			--grey: #ddd;
+			--shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+		}
+
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			line-height: 1.4;
+			background-color: gray;
+		}
+
+		/* CSS Grid Layout Structure */
+		.page-wrapper {
+			display: grid;
+			grid-template-areas: 
+				"nav"
+				"header"
+				"content"
+				"footer";
+			grid-template-columns: 1fr;
+		}
+
+		/* Responsive Navbar using Flexbox */
+		.main-nav {
+			grid-area: nav;
+			background-color: var(--orange);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 60px;
+		}
+
+		.main-nav ul {
+			display: flex;
+			list-style: none;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 5px;
+		}
+
+		.main-nav li a {
+			text-decoration: none;
+			color: #333;
+			font-weight: bold;
+			padding: 20px 40px;
+			display: block;
+			transition: 0.3s;
+		}
+
+		.main-nav li a:hover {
+			color: var(--light);
+			background-color: var(--steelblue);
+		}
+
+		/* Header with Responsive Background Image */
+		header {
+			grid-area: header;
+			/* Using linear-gradient to ensure text readability over the image */
+			background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+						url('wrench-metal-pipe.jpg') no-repeat center center;
+			background-size: cover;
+			height: 350px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: var(--light);
+			text-align: center;
+		}
+
+		header h1 {
+			font-size: 3rem;
+			background: transparent; /* Overriding previous style */
+		}
+
+		header h3 {
+			font-size: 1.5rem;
+			background: transparent; /* Overriding previous style */
+		}
+
+		/* Main Content Section */
+		.container {
+			grid-area: content;
+			background-color: rgb(163, 156, 156);
+			width: 75%;
+			margin: 0 auto;
+			padding: 2rem;
+			box-shadow: var(--shadow);
+		}
+
+		.container h3 {
+			text-align: left;
+			background: transparent;
+			margin: 1rem 0;
+		}
+
+		.container ul {
+			margin-left: 25px;
+			margin-bottom: 1.5rem;
+		}
+
+		/* Responsive Grid for Founder Boxes */
+		.boxes {
+			display: grid;
+			gap: 20px;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			margin-top: 2rem;
+		}
+
+		.box {
+			background: var(--grey);
+			text-align: center;
+			padding: 1.5rem;
+			box-shadow: var(--shadow);
+		}
+
+		.box img {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+			margin-top: 10px;
+		}
+
+		/* Footer Styling */
+		footer {
+			grid-area: footer;
+			background: var(--dark);
+			color: var(--light);
+			text-align: center;
+			padding: 2rem;
+			margin-top: 2rem;
+			box-shadow: var(--shadow);
+		}
+
+		/* Mobile Responsive View */
+		@media (max-width: 700px) {
+			.main-nav ul {
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.main-nav li {
+				width: 100%;
+				text-align: center;
+			}
+
+			.main-nav li a {
+				padding: 15px;
+				border-bottom: 1px solid rgba(0,0,0,0.1);
+			}
+
+			.container {
+				width: 95%;
+			}
+
+			header h1 {
+				font-size: 2rem;
+			}
+		}
+	</style>
 </head>
 <body>		
-	<nav class = "main-nav">
+
+	<div class="page-wrapper">
+		<nav class="main-nav">
 			<ul>
-				<li><a href = "index.html">Home</a></li>
-				<li><a href = "services.html">Services</a></li>
-				<li><a href = "contact.html">Contact</a></li>
-				<li><a href = "how-to.html">How To</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="how-to.html">How To</a></li>
 			</ul>
-	</nav>
-		<h1>Long Lake Plumbing</h1>
-		<h3>Traverse City, MI</h3>
-		<!-- Top container -->
-		<div class = "top-container">
-			<div class="slideImage">
-				<img src="images/wrench-metal-pipe.jpg">
-			</div>
-			<div class="slideImage">
-				<img src="images/wrench-plastic-pipe.jpg">
-			</div>
-			<div class="slideImage">
-				<img src="images/flexible-shower-head.jpg">
-			</div>
-			<div class="slideImage">
-				<img src="images/plumbing-supplies.jpg">
-			</div>
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  			<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		</div>
-		
-		<div class="content">
-			<p>Long Lake Plumbing in Traverse City, Michigan  was established in 2005 by Bob Walters, the third generation of master plumbers with the Walters name.  Bob's grandfather, Herman, started the company, which John Walters, Bob's father, carried on as the second generation.</p>
+		</nav>
+
+		<header>
+			<h1>Long Lake Plumbing</h1>
+			<h3>Traverse City, MI</h3>
+		</header>
+
+		<div class="container">
+			<p>Long Lake Plumbing in Traverse City, Michigan was established in 2005 by Bob Walters, the third generation of master plumbers with the Walters name. Bob's grandfather, Herman, started the company, which John Walters, Bob's father, carried on as the second generation.</p>
+			
 			<br>
 			<h3>About Bob Walters</h3>
 			<ul>
@@ -45,38 +209,30 @@
 				<li>Licensed with the State of Michigan</li>
 				<li>Insured with Farm Bureau of Michigan</li>
 			</ul>
+			
 			<br>
 			<h3>My Business Philosophy</h3>
 			<p>At Long Lake Plumbing, doing quality work on time and at a reasonable price is what I'm all about.</p>
-			<p>I'll assess your needs, and let you know if I can complete the job in a reasonable amount of time.  If necessary, I
-can also refer you to other specialists (such as electricians or masons) you might need to complete your renovation or home upgrade.</p>
-		</div>
+			<p>I'll assess your needs, and let you know if I can complete the job in a reasonable amount of time. If necessary, I can also refer you to other specialists (such as electricians or masons) you might need to complete your renovation or home upgrade.</p>
 
+			<section class="boxes">
+				<div class="box">
+					<h3>Bob Walters</h3>
+					<img src="images/founder1.png" alt="First Founder">
+				</div>
+				<div class="box">
+					<h3>Herman Walters</h3>
+					<img src="images/founder2.png" alt="Second Founder">
+				</div>
+				<div class="box">
+					<h3>John Walters</h3>
+					<img src="images/founder3-resized.png" alt="Third Founder">
+				</div>
+			</section>
+		</div><footer>
+			<p>&copy; 2026 by Long Lake Plumbing | 4792 Ridgewater Run | Traverse City, MI 49685 | Phone: (231) 590-9628 | plumbob6262 [at] gmail [dot] com</p>
+		</footer>
+	</div>
 
-	<div class = "wrapper">
-
-	
-		<section class = "boxes">
-			<div class = "box">
-				<h3>Bob Walters</h3>
-				<img src="images/founder1.png" alt="First Founder" height="250">
-			</div>
-			<div class = "box">
-				<h3>Herman Walters</h3>
-				<img src="images/founder2.png" alt="Second Founder" height="250">
-			</div>
-			<div class = "box">
-				<h3>John Walters</h3>
-				<img src="images/founder3-resized.png" alt="Third Founder" height="250">
-			</div>
-		</section>
-	</div><!-- End wrapper DIV -->
-
-
-	<footer>
-		<p>&copy; 2026 by Long Lake Plumbing | 4792 Ridgewater Run | Traverse City, MI 49685  |  Phone: (231) 590-9628  |  plumbob6262 [at] gmail [dot] com</p>
-	</footer>
-
-	<script src="image-carousel.js"></script>
 </body>
 </html>
