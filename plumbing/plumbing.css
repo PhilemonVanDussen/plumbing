@@ -10,8 +10,7 @@
 	--primary: #ddd;
 	--dark: #333;
 	--light: #fff;
-	/* --dark-grey: linear-gradient(to right, rgba(122, 89, 89, 0.897), rgb(143, 76, 76)); */
-	--dark-grey: linear-gradient(to right, rgb(140, 166, 192), rgb(64, 110, 163, 0.897));
+	--dark-grey: gray;
 	--very-light-grey: rgb(163, 156, 156);
 
 	--black: #000;
@@ -28,7 +27,7 @@ html{
 }
 
 body {
-	background: var(--dark-grey);
+	background-color: var(--dark-grey);
 	margin: 0;
 	line-height: 1.4;
 }
@@ -84,7 +83,7 @@ body {
 	border: none;
 }
 
-h1 {
+h1, h3 {
 	text-align: center;
 	background-color: var(--very-light-grey);
 	/* Added margin to eliminate gap between top-container and content DIVs */
@@ -93,6 +92,7 @@ h1 {
 
 /* Image Carousel */
 .top-container {
+	background-color: var(--steelblue);
 	width: 75%;
 	margin: 0 auto;
 	line-height: 0; /* Collapses white space within the top-container */
