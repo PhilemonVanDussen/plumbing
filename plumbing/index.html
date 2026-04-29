@@ -5,13 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home | Long Lake Plumbing</title>
 	<style>
-/* Global Reset and Variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Global Variables */
 :root {
     --orange: #EF7D12;
     --steelblue: rgb(36, 83, 145);
@@ -19,6 +13,13 @@
     --light: #fff;
     --grey: #ddd;
     --shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -108,37 +109,39 @@ header h2 {
     box-shadow: var(--shadow);
 }
 
-/* Video Grid: 3 columns on desktop */
-.boxes {
-    display: grid;
+.container h3 {
+    text-align: left;
+    background: transparent;
+    margin: 1rem 0;
+}
+
+.container ul {
+    margin-left: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.container p {
+    margin-bottom: 1rem;
+}
+
+/* Founders Section - Horizontal Layout (Desktop) */
+.founders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
     margin-top: 2rem;
 }
 
-.box {
-    background: var(--grey);
+.founder {
+    flex: 1;
     text-align: center;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
 }
 
-/* Video Container for Responsive 16:9 Aspect Ratio */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    overflow: hidden;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+.founder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 /* Footer Styling */
@@ -152,11 +155,13 @@ footer {
     box-shadow: var(--shadow);
 }
 
-#emergency { color: red; font-weight: bold; }
+#emergency { 
+    color: red; 
+    font-weight: bold; 
+}
 
 /* Mobile Responsive View */
 @media (max-width: 700px) {
-    /* Stack Nav vertically */
     .main-nav ul {
         flex-direction: column;
         width: 100%;
@@ -172,17 +177,23 @@ footer {
         border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
-    /* Stack Videos vertically */
-    .boxes {
-        grid-template-columns: 1fr;
-    }
-
     .container {
         width: 95%;
     }
 
     header h1 {
         font-size: 2rem;
+    }
+
+    /* Founders Section - Vertical Stack (Mobile) */
+    .founders {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .founder {
+        width: 100%;
+        margin-bottom: 2rem;
     }
 }
 	</style>
@@ -221,16 +232,16 @@ footer {
 			<p>At Long Lake Plumbing, doing quality work on time and at a reasonable price is what I'm all about.</p>
 			<p>I'll assess your needs, and let you know if I can complete the job in a reasonable amount of time. If necessary, I can also refer you to other specialists (such as electricians or masons) you might need to complete your renovation or home upgrade.</p>
 
-			<section class="boxes">
-				<div class="box">
+			<section class="founders">
+				<div class="founder">
 					<h3>Bob Walters</h3>
 					<img src="images/founder1.png" alt="First Founder">
 				</div>
-				<div class="box">
+				<div class="founder">
 					<h3>Herman Walters</h3>
 					<img src="images/founder2.png" alt="Second Founder">
 				</div>
-				<div class="box">
+				<div class="founder">
 					<h3>John Walters</h3>
 					<img src="images/founder3-resized.png" alt="Third Founder">
 				</div>
