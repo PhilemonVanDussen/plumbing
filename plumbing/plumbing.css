@@ -93,18 +93,23 @@ h1 {
 .top-container {
 	width: 75%;
 	margin: auto;
+	
 }
 
 .top-container img {
 	width: 100%;
+	height: 350px;
+	object-fit: cover;
+	/* display: block; */
+	/* margin: auto; */
+	
 }
 
 .prev, .next {
 	cursor: pointer;
 	position: absolute;
-	top:50%;
+	top:33%;
 	width:auto;
-	margin-top: -22px;
 	padding: 16px;
 	color: white;
 	font-weight:bold;
