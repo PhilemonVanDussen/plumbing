@@ -96,6 +96,7 @@ h1 {
 	width: 75%;
 	margin: 0 auto;
 	line-height: 0; /* Collapses white space within the top-container */
+	position: relative; /* CRITICAL: Keeps absolute children inside this box */
 	
 	
 }
@@ -111,11 +112,11 @@ h1 {
 
 .prev, .next {
 	cursor: pointer;
-	position: absolute;
+	position: absolute; /* Positions relative to .top-container */
 	top: 50%;
 	transform: translateY(-50%);
 
-	width:auto;
+	/* width:auto; */
 	padding: 16px;
 	color: white;
 	font-weight:bold;
@@ -124,10 +125,17 @@ h1 {
 	user-select: none;
 	z-index: 10; /* Ensures arrows stay above the images */
 }
+
+.prev {
+	left: 0;
+	border-radius: 0 3px 3px 0;
+}
+
+/* Position "Next" on the right edge */
 .next {
-	/* margin-left: 75%; */
 	right: 0; /* Changed from margin-left for more reliable positioning */
 	border-radius: 3px 0 0 3px;
+	margin-left: 0;
 }
 
 .prev:hover, .next:hover {
