@@ -112,7 +112,9 @@ h1 {
 .prev, .next {
 	cursor: pointer;
 	position: absolute;
-	top:33%;
+	top: 50%;
+	transform: translateY(-50%);
+
 	width:auto;
 	padding: 16px;
 	color: white;
@@ -120,9 +122,11 @@ h1 {
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
+	z-index: 10; /* Ensures arrows stay above the images */
 }
 .next {
-	margin-left: 75%;
+	/* margin-left: 75%; */
+	right: 0; /* Changed from margin-left for more reliable positioning */
 	border-radius: 3px 0 0 3px;
 }
 
